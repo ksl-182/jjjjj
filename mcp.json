@@ -1,0 +1,20 @@
+{
+  "name": "ai-workflow-mcp-browser",
+  "displayName": "AI Workflow MCP Browser",
+  "version": "1.0.0",
+  "description": "通过浏览器自动化在多个 AI 网站上完成从需求到实现规格的规划工作流",
+  "author": "ksl-182",
+  "entry": "server.py",
+  "tools": [
+    {"name": "workflow_run", "description": "运行 plan→review→accept→spec 四步规划流程"},
+    {"name": "workflow_execute", "description": "读取 Spec 并生成实现指令给代码执行 Agent"},
+    {"name": "workflow_status", "description": "显示各步骤输出文件是否存在及大小"},
+    {"name": "workflow_reset", "description": "删除所有步骤文件，从头重来（需要 confirm=true）"},
+    {"name": "git_commit", "description": "在项目根目录执行 git add . && git commit"}
+  ],
+  "install": {
+    "type": "script",
+    "script": "setup.bat",
+    "notes": "运行 setup.bat 可在本机注册 MCP 工具（需在 Claude Code 客户端执行注册命令）"
+  }
+}
